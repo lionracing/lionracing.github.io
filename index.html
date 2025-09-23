@@ -3,58 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La meva web personal</title>
+  <title>Lion Racing Team</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #052493, #ea251c);
       color: #fff;
+      padding: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+      justify-content: space-between;
     }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      max-width: 400px;
-      backdrop-filter: blur(10px);
+    header img {
+      height: 60px;
     }
-    h1 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
     }
-    p {
-      margin: 0 0 20px;
-      font-size: 1.1rem;
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 25px;
+      transition: background 0.3s;
     }
-    a {
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #052493;
+      margin-bottom: 15px;
+    }
+    .btn {
       display: inline-block;
-      margin: 0 10px;
-      padding: 10px 20px;
+      margin-top: 20px;
+      padding: 12px 25px;
       border-radius: 30px;
       text-decoration: none;
-      color: #5563DE;
-      background: #fff;
+      background: #ea251c;
+      color: #fff;
       font-weight: bold;
       transition: 0.3s;
     }
-    a:hover {
-      background: #eee;
+    .btn:hover {
+      background: #c41f17;
+    }
+    .vlog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card p {
+      padding: 15px;
+    }
+    footer {
+      background: #052493;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ea251c;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hola 👋 Sóc [El teu nom]</h1>
-    <p>Aquesta és la meva pàgina personal feta amb GitHub Pages 🚀</p>
-    <a href="mailto:elteucorreu@example.com">Contacta’m</a>
-    <a href="https://github.com/elTeuUsuari" target="_blank">GitHub</a>
-  </div>
+  <!-- HEADER -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="Logo_Blau.png" alt="Logo Lion Racing Team">
+      <h1>Lion Racing Team</h1>
+    </div>
+    <nav>
+      <a href="#qui-som">Qui som</a>
+      <a href="#vlog">Vlog</a>
+      <a href="mailto:elteucorreu@example.com">Contacta’ns</a>
+    </nav>
+  </header>
+
+  <!-- QUI SOM -->
+  <section id="qui-som">
+    <h2>Qui som</h2>
+    <p>
+      Som el <strong>Lion Racing Team</strong>, un equip apassionat per l’aventura i els reptes solidaris. 
+      Participem a la <a href="https://www.uniraid.org/" target="_blank">Uniraid</a>, una experiència única on 
+      combinem esperit esportiu, mecànica i solidaritat.
+    </p>
+    <a href="mailto:elteucorreu@example.com" class="btn">Contacta’ns</a>
+  </section>
+
+  <!-- VLOG -->
+  <section id="vlog">
+    <h2>El nostre Vlog</h2>
+    <p>Aquí compartirem fotos i històries de la nostra aventura 🚗🔥</p>
+    <div class="vlog">
+      <!-- Exemples de targetes -->
+      <div class="card">
+        <img src="foto1.jpg" alt="Foto del nostre cotxe">
+        <p>Preparant el cotxe abans de l’aventura.</p>
+      </div>
+      <div class="card">
+        <img src="foto2.jpg" alt="Foto del desert">
+        <p>Un moment inoblidable durant el viatge al desert.</p>
+      </div>
+      <div class="card">
+        <img src="foto3.jpg" alt="Foto de l’equip">
+        <p>L’equip al complet abans de la sortida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+  </footer>
 </body>
 </html>
