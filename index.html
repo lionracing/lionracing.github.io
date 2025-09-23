@@ -20,7 +20,7 @@
       justify-content: space-between;
     }
     header img {
-      height: 60px;
+      height: 90px;
     }
     header h1 {
       margin: 0;
@@ -121,7 +121,27 @@
       Participem a la <a href="https://www.uniraid.org/" target="_blank">Uniraid</a>, una experiència única on 
       combinem esperit esportiu, mecànica i solidaritat.
     </p>
-    <a href="mailto:elteucorreu@example.com" class="btn">Contacta’ns</a>
+    <a href="mailto:lionracing.uniraid@gmail.com" class="btn">Contacta’ns</a>
+  </section>
+
+  <!-- UNIRAID 2026 -->
+  <section id="uniraid2026">
+    <h2 class="ca">Uniraid 2026</h2>
+    <h2 class="en">Uniraid 2026</h2>
+
+    <p class="ca">
+      L’<strong>Uniraid</strong> és una aventura solidària al desert del Marroc per a estudiants universitaris amb cotxes de més de 20 anys. 
+      Una experiència que combina aventura, solidaritat i treball en equip.
+    </p>
+    <p class="en">
+      <strong>Uniraid</strong> is a solidarity adventure in the Moroccan desert for university students with cars over 20 years old. 
+      An experience that combines adventure, solidarity, and teamwork.
+    </p>
+
+    <img src="mapa_uniraid.jpg" alt="Mapa Uniraid" style="width:100%; border-radius: 15px; margin-top: 15px;">
+
+    <a href="https://www.uniraid.org/" target="_blank" class="btn ca">Visita la web oficial</a>
+    <a href="https://www.uniraid.org/" target="_blank" class="btn en">Visit official website</a>
   </section>
 
   <!-- VLOG -->
@@ -149,5 +169,15 @@
   <footer>
     <p>Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
   </footer>
+
+  <!-- Script idiomes -->
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.ca').forEach(el => el.style.display = (lang === 'ca' ? 'block' : 'none'));
+      document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
+    }
+    // Per defecte en català
+    setLang('ca');
+  </script>
 </body>
 </html>
