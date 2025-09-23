@@ -3,15 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La meva primera web</title>
+  <title>La meva web personal</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #2c3e50; }
-    p { color: #555; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+    p {
+      margin: 0 0 20px;
+      font-size: 1.1rem;
+    }
+    a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #5563DE;
+      background: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #eee;
+    }
   </style>
 </head>
 <body>
-  <h1>Hola 👋 Sóc la meva primera web!</h1>
-  <p>Això està funcionant amb GitHub Pages 🚀</p>
+  <div class="card">
+    <h1>Hola 👋 Sóc [El teu nom]</h1>
+    <p>Aquesta és la meva pàgina personal feta amb GitHub Pages 🚀</p>
+    <a href="mailto:elteucorreu@example.com">Contacta’m</a>
+    <a href="https://github.com/elTeuUsuari" target="_blank">GitHub</a>
+  </div>
 </body>
 </html>
