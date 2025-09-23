@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lion Racing Team</title>
+  <!-- Conthrax Bold -->
+  <link href="https://fonts.cdnfonts.com/css/conthrax" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -24,10 +26,15 @@
     }
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-family: 'Conthrax', sans-serif;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
     nav a {
-      margin-left: 15px;
       text-decoration: none;
       color: #fff;
       font-weight: bold;
@@ -37,6 +44,13 @@
     }
     nav a:hover {
       background: rgba(255, 255, 255, 0.2);
+    }
+    nav img.flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #fff;
     }
     section {
       max-width: 900px;
@@ -97,6 +111,8 @@
       text-decoration: none;
       font-weight: bold;
     }
+    /* Idiomes */
+    .en { display: none; }
   </style>
 </head>
 <body>
@@ -108,20 +124,33 @@
     </div>
     <nav>
       <a href="#qui-som">Qui som</a>
+      <a href="#uniraid2026">Uniraid 2026</a>
       <a href="#vlog">Vlog</a>
       <a href="mailto:elteucorreu@example.com">Contacta’ns</a>
+      <!-- Banderes -->
+      <img src="cat.png" alt="Català" class="flag" onclick="setLang('ca')">
+      <img src="uk.png" alt="English" class="flag" onclick="setLang('en')">
     </nav>
   </header>
 
   <!-- QUI SOM -->
   <section id="qui-som">
-    <h2>Qui som?</h2>
-    <p>
+    <h2 class="ca">Qui som?</h2>
+    <h2 class="en">Who are we?</h2>
+
+    <p class="ca">
       Som el <strong>Lion Racing Team</strong>, un equip apassionat per l’aventura i els reptes solidaris. 
       Participem a la <a href="https://www.uniraid.org/" target="_blank">Uniraid</a>, una experiència única on 
       combinem esperit esportiu, mecànica i solidaritat.
     </p>
-    <a href="mailto:lionracing.uniraid@gmail.com" class="btn">Contacta’ns</a>
+    <p class="en">
+      We are the <strong>Lion Racing Team</strong>, a team passionate about adventure and solidarity challenges. 
+      We participate in the <a href="https://www.uniraid.org/" target="_blank">Uniraid</a>, a unique experience where 
+      we combine sportsmanship, mechanics, and solidarity.
+    </p>
+
+    <a href="mailto:elteucorreu@example.com" class="btn ca">Contacta’ns</a>
+    <a href="mailto:elteucorreu@example.com" class="btn en">Contact us</a>
   </section>
 
   <!-- UNIRAID 2026 -->
@@ -146,28 +175,35 @@
 
   <!-- VLOG -->
   <section id="vlog">
-    <h2>Segueix-nos a l'aventura</h2>
-    <p>Aquí compartirem fotos i històries de la nostra aventura 🚗🔥</p>
+    <h2 class="ca">Segueix-nos a l'aventura</h2>
+    <h2 class="en">Follow our adventure</h2>
+
+    <p class="ca">Aquí compartirem fotos i històries de la nostra aventura 🚗🔥</p>
+    <p class="en">Here we will share photos and stories of our adventure 🚗🔥</p>
+
     <div class="vlog">
-      <!-- Exemples de targetes -->
       <div class="card">
         <img src="foto1.jpg" alt="Foto del nostre cotxe">
-        <p>Preparant el cotxe abans de l’aventura.</p>
+        <p class="ca">Preparant el cotxe abans de l’aventura.</p>
+        <p class="en">Preparing the car before the adventure.</p>
       </div>
       <div class="card">
         <img src="foto2.jpg" alt="Foto del desert">
-        <p>Un moment inoblidable durant el viatge al desert.</p>
+        <p class="ca">Un moment inoblidable durant el viatge al desert.</p>
+        <p class="en">An unforgettable moment during the desert trip.</p>
       </div>
       <div class="card">
         <img src="foto3.jpg" alt="Foto de l’equip">
-        <p>L’equip al complet abans de la sortida.</p>
+        <p class="ca">L’equip al complet abans de la sortida.</p>
+        <p class="en">The full team before the departure.</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+    <p class="ca">Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+    <p class="en">Lion Racing Team © 2025 | Inspired by <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
   </footer>
 
   <!-- Script idiomes -->
