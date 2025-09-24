@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lion Racing Team</title>
+  <!-- Conthrax Bold -->
+  <link href="https://fonts.cdnfonts.com/css/conthrax" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #052493, #ea251c);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 70px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-family: 'Conthrax', sans-serif;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 25px;
+      transition: background 0.3s;
+      font-family: 'Conthrax', sans-serif;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    nav img.flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 2px solid #fff;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    #intro{
+      background: #052493;
+      color: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+    }
+    h1 {
+      color: #ffffff;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      font-family: 'Conthrax', sans-serif;
+    }
+    h2 {
+      color: #052493;
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: #052493;
+      margin-bottom: 15px; 
+    }
+    .btn {
+      display: inline-block;
+      margin: 20px 10px 0 auto;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      background: #ea251c;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #c41f17;
+    }
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .member {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .member:hover {
+      transform: scale(1.03);
+    }
+    .member img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+    .member h3 {
+      margin: 10px 0 5px;
+      color: #052493;
+    }
+    .member p {
+      font-size: 0.95rem;
+    }
+    .member .linkedin {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 1.5rem; 
+      color: #052493;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    
+    .member .linkedin:hover {
+      transform: scale(1.2);
+    }
+    .uniraid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .uniraid-info, .uniraid-2026 {
+      flex: 1;
+      min-width: 280px;
+    }
+    .vlog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card p {
+      padding: 15px;
+    }
+    .card .date{
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    footer {
+      background: #052493;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ea251c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .en { display: none; }
+    /* Responsive: mòbil */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      header img {
+        height: 50px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+
+      section {
+        margin: 20px auto;
+        padding: 0 10px;
+      }
+
+      #intro img {
+        height: 180px; /* més petit per mòbil */
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 10px auto;
+        display: block;
+        width: fit-content;
+      }
+
+      .team {
+        grid-template-columns: 1fr;
+      }
+
+      .vlog {
+        grid-template-columns: 1fr;
+      }
+
+      .uniraid-container {
+        flex-direction: column;
+      }
+
+      footer {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="Logo_Blanc.png" alt="Logo Lion Racing Team">
+    </div>
+    <nav>
+      <a href="#equip" class="ca">L'Equip</a>
+      <a href="#uniraid2026" class="ca">UNIRAID</a>
+      <a href="#vlog" class="ca">Blog</a>
+      <a href="#follow" class="ca">Contacta’ns</a>
+      <a href="#equip" class="en">The Team</a>
+      <a href="#uniraid2026" class="en">UNIRAID</a>
+      <a href="#vlog" class="en">Blog</a>
+      <a href="#follow" class="en">Contact us</a>
+      <!-- Banderes -->
+      <img src="cat.png" alt="Català" class="flag" onclick="setLang('ca')">
+      <img src="uk.png" alt="English" class="flag" onclick="setLang('en')">
+    </nav>
+  </header>
+
+  <!-- Intro amb foto a dalt, text al mig i foto a baix -->
+  <section id="intro" style="position:relative; overflow:hidden; background:none; max-width:900px; margin:0 auto; border-radius:15px;">
+
+    <!-- Foto superior -->
+    <img src="foto1.jpg" alt="Foto superior" style="
+      width:100%; 
+      display:block; 
+      object-fit:cover; 
+      height:250px; 
+      border-radius:15px 15px 0 0;
+      margin:0;
+    ">
+
+    <!-- Bloc de text al mig -->
+    <div style="
+      background:#052493; 
+      padding:25px; 
+      color:#fff; 
+      line-height:1.6;
+    ">
+      <h1 class="ca" style="margin-bottom:10px; font-size:1.8rem;">Benvinguts a la nostra aventura!</h1>
+      <h1 class="en" style="margin-bottom:20px; font-size:1.6rem;">Welcome to our adventure!</h1>
+
+      <div class="ca">
+        <p style="text-align: justify;">Som dues enginyeres de Barcelona, preparant-nos per a una aventura única: <strong>UNIRAID 2026</strong>. La nostra missió és senzilla: recórrer durant 7 dies el desert del Marroc en un cotxe de 25 anys, <strong>entregant 40 kg de material solidari</strong>.</p>
+        <p style="text-align: justify;">Amb aquest viatge volem aportar recursos essencials a les comunitats locals i transmetre l’esperit de col·laboració i treball en equip.</p>
+        <p style="text-align: justify;">Segueix la nostra aventura i acompanya’ns mentre convertim quilòmetres en <strong>impacte social</strong>!</p>
+      </div>
+
+      <div class="en" style="margin-top:15px;">
+        <p style="text-align: justify;">We are two engineers from Barcelona, embarking on an incredible adventure: <strong>UNIRAID 2026</strong>. Our mission is simple: drive through the desert in Morocco for 7 days in a 25-year-old car, <strong>delivering 40 kg of donated supplies</strong>.</p> 
+        <p style="text-align: justify;">Through this journey, we aim to provide essential resources to communities in need and share the spirit of collaboration and teamwork.</p>
+        <p style="text-align: justify;">Follow our journey and join us as we turn kilometers into <strong>social impact</strong>!</p>
+      </div>
+    </div>
+
+    <!-- Foto inferior -->
+    <img src="foto2.jpg" alt="Foto inferior" style="
+      width:100%; 
+      display:block; 
+      object-fit:cover; 
+      height:250px; 
+      border-radius:0 0 15px 15px;
+      margin:0;
+    ">
+
+  </section>
+    
+  <!-- L'Equip -->
+  <section id="equip">
+    <h2 style="font-family: 'Conthrax', sans-serif;">LION Racing Team</h2>
+  
+    <p style="text-align: justify;" class="ca">
+      Som dues estudiants d’enginyeria industrial apassionades pel motor i l’aventura. Participar a l’UNIRAID ens permet combinar la nostra passió per l’enginyeria i els cotxes amb un projecte solidari.
+      Preparar el cotxe amb les nostres pròpies mans i recórrer el Marroc ajudant comunitats locals fa que aquesta experiència sigui única i motivadora.
+    </p>
+    <p style="text-align: justify;" class="en">
+      We are two industrial engineering students united by a passion for motors and adventure. UNIRAID gives us the chance to combine our love for engineering and cars with a meaningful solidarity project.
+      Working on the car with our own hands and driving through Morocco to support local communities makes this experience truly unique and inspiring.
+    </p>
+  
+    <!-- Cards de membres -->
+    <div class="team">
+      <div class="member">
+        <img src="laia_ripoll.jpg" alt="Laia Ripoll">
+        <h3 style="font-family: 'Conthrax', sans-serif; display: flex; align-items: center; gap: 8px;">
+          Laia Ripoll
+          <a href="https://www.linkedin.com/in/laia-ripoll-graus-471283294/" target="_blank" style="display:flex; align-items:center;">
+            <img src="linkedin.png" alt="LinkedIn Laia Ripoll" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
+          </a>
+        </h3>
+        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 23 anys i és de Lleida. Li agrada la Formula 1, els caballs i la platja.</p>
+        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 23 years old and is from Lleida. She likes Formula 1, horses and the beach.</p> -->
+      </div>
+      <div class="member">
+        <img src="inca_ciurana.jpg" alt="Inca Ciurana">
+        <h3 style="font-family: 'Conthrax', sans-serif; display: flex; align-items: center; gap: 8px;">
+          Inca Ciurana
+          <a href="https://www.linkedin.com/in/inca-ciurana-montiel-783aa4256/" target="_blank" style="display:flex; align-items:center;">
+            <img src="linkedin.png" alt="LinkedIn Inca Ciurana" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
+          </a>
+        </h3>
+        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 22 anys i és de Girona. Li agrada el futbol, la muntanya i el motorsport.</p>
+        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 22 years old and is from Girona. She likes soccer, hiking and motorsport.</p> -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- UNIRAID 2026 -->
+    <section id="uniraid2026">
+    <h2 style="font-family: 'Conthrax', sans-serif;">UNIRAID</h2>
+    <div class="uniraid-container" style="display:flex; flex-wrap:wrap; gap:20px;">
+      
+      <div class="uniraid-info" style="flex:1; min-width:280px;">
+        <div class="ca">
+          <p style="text-align: justify; margin-top:0px;">L'UNIRAID és molt més que una competició automobilística, és un rally universitari solidari que combina l'aventura amb acció social. Aquest esdeveniment, conegut també com el "Dakar Universitari", reuneix equips d'estudiants universitaris d'arreu d'Europa que preparen els seus cotxes per emprendre una aventura solidària única.</p> 
+          <p style="text-align: justify;">La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar material solidari, com ara material escolar, roba, joguines, productes d'higiene i altres de primera necessitat.</p> 
+          <p style="text-align: justify;">Els mesos previs a l'esdeveniment, que té lloc a principis de febrer, els estudiants han de:</p> 
+          <ul> 
+            <li>Preparar mecànicament el cotxe</li> 
+            <li>Recaptar material solidari</li> 
+            <li>Aconseguir col·laboradors i patrocinadors</li> 
+            <li>Planificar la logística</li> 
+          </ul> 
+          <p style="text-align: justify;">L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+        </div>
+        <div class="en">
+          <p style="text-align: justify;">UNIRAID is much more than a competition, it is a charitable student rally that combines adventure with social action. This event, also known as the "University Dakar," brings together teams of university students from across Europe who prepare their own cars to embark on a unique solidarity adventure.</p> 
+          <p style="text-align: justify;">The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver charitable supplies, such as school supplies, clothing, toys, hygiene products, and other essentials.</p> 
+          <p style="text-align: justify;">In the months leading up to the event, which takes place in early February, students must:</p> 
+          <ul> 
+            <li>Mechanically prepare their car</li> 
+            <li>Collect charitable supplies</li> 
+            <li>Secure collaborators and sponsors</li> 
+            <li>Plan logistics</li> 
+          </ul> 
+          <p style="text-align: justify;">UNIRAID thus represents three core values: solidarity, sustainability, and education.</p> 
+        </div>
+        <a href="https://www.uniraid.org/" target="_blank">
+          <img src="foto_uniraid.png" alt="Foto UNIRAID" style="display:block; width:80%; height:auto; border-radius:10px; margin:20px auto 0 auto;">
+        </a>
+      </div>
+  
+      <div class="uniraid-2026" style="flex:1; min-width:280px; background:#052493; color:#fff; padding:20px; border-radius:15px;">
+        <h3 style="color:#ffffff; text-align:center; font-family: 'Conthrax', sans-serif; margin-top:0px;" class="ca">UNIRAID 2026</h3>
+        <h3 style="color:#ffffff; text-align:center; font-family: 'Conthrax', sans-serif; margin-top:0px;" class="en">UNIRAID 2026</h3>
+        
+        <img src="mapa_uniraid.png" alt="Mapa Uniraid" style="width:100%; height:auto; border-radius:10px; margin-bottom:15px;">
+        
+        <div class="ca">
+          <p style="text-align: justify;">L'edició 2026 tindrà lloc del 7 al 14 de febrer. Consta de 7 etapes regulars i una etapa marató de dos dies:</p>
+          <ul>
+            <li><strong>Etapa 0:</strong> Tànger - El Hajef </li>
+            <li><strong>Etapa 1:</strong> El Hajef - Aufous </li>
+            <li><strong>Etapa 2:</strong> Aufous - Merdani </li>
+            <li><strong>Etapa 3:</strong> Merdani - Erg Chebbi</li>
+            <li><strong>Etapa 4 & 5:</strong> Erg Chebbi - Nkob </li>
+            <li><strong>Etapa 6:</strong> Nkob - Marrakech</li>
+            <li><strong>Etapa 7:</strong> Marrakech - Tànger </li>
+          </ul>
+        </div>
+        <div class="en">
+          <p style="text-align: justify;">The 2026 edition will take place from February 7 to 14. It consists of 7 regular stages and a two-day marathon stage:</p>
+          <ul>
+            <li><strong>Stage 0:</strong> Tangier - El Hajef</li>
+            <li><strong>Stage 1:</strong> El Hajef - Aufous</li>
+            <li><strong>Stage 2:</strong> Aufous - Merdani</li>
+            <li><strong>Stage 3:</strong> Merdani - Erg Chebbi</li>
+            <li><strong>Stages 4 & 5:</strong> Erg Chebbi - Nkob</li>
+            <li><strong>Stage 6:</strong> Nkob - Marrakech</li>
+            <li><strong>Stage 7:</strong> Marrakech - Tangier</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- VLOG -->
+  <section id="vlog">
+    <h2 style="font-family: 'Conthrax', sans-serif;" class="ca">Blog</h2>
+    <h2 style="font-family: 'Conthrax', sans-serif;" class="en">Blog</h2>
+
+    <div class="vlog">
+      <div class="card">
+        <img src="foto2.jpg" alt="Foto del desert">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
+        <p style="margin-top:0px; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
+        <p style="text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
+        <span class="date">24/09</span>
+      </div>
+      <div class="card">
+        <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
+        <p style="margin-top:0px; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos a <strong>@lionracing.uniraid</strong> a Instagram i Tik Tok!</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
+        <p style="text-align: justify;" class="en">Launch of the team on social media. Follow us at @lionracing.uniraid in Instagram and Tik Tok!</p>
+        <span class="date">24/09</span>
+      </div>
+      <!-- <div class="card">
+        <img src="foto3.jpg" alt="Foto de l’equip">
+        <p class="ca">L’equip al complet abans de la sortida.</p>
+        <p class="en">The full team before the departure.</p>
+      </div>
+    </div> -->
+  </section>
+
+  <section id="follow" style="text-align:center; padding:20px 20px; background:#f4f4f9;">
+    <h2 class="ca" style="font-family: 'Conthrax', sans-serif;">Segueix-nos</h2>
+    <h2 class="en" style="font-family: 'Conthrax', sans-serif;">Follow Us</h2>
+  
+    <div style="display:inline-block;">
+      <a href="https://www.instagram.com/lionracing.uniraid" target="_blank" style="display:inline-block; margin:0 10px;">
+        <img src="instagram.png" alt="Instagram" style="width:50px; height:50px; display:block;">
+      </a>
+      <a href="https://www.linkedin.com/company/lion-racing-team" target="_blank" style="display:inline-block; margin:0 10px;">
+        <img src="linkedin.png" alt="LinkedIn" style="width:50px; height:50px; display:block;">
+      </a>
+      <a href="https://www.tiktok.com/@lionracing.uniraid" target="_blank" style="display:inline-block; margin:0 10px;">
+        <img src="tiktok.jpg" alt="TikTok" style="width:50px; height:50px; display:block;">
+      </a>
+    </div>
+  
+    <div>
+      <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn ca">Contacta’ns</a>
+      <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn en">Contact us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="ca">Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+    <p class="en">Lion Racing Team © 2025 | Inspired by <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+  </footer>
+
+  <!-- Script idiomes -->
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.ca').forEach(el => el.style.display = (lang === 'ca' ? 'block' : 'none'));
+      document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
+    }
+    // Per defecte en català
+    setLang('ca');
+  </script>
+</body>
+</html>
