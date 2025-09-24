@@ -117,12 +117,10 @@
       transform: scale(1.03);
     }
     .member img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
       border-radius: 15px;
       margin-bottom: 15px;
-      <!-- border: 3px solid #052493; -->
     }
     .member h3 {
       margin: 10px 0 5px;
@@ -142,6 +140,15 @@
     
     .member .linkedin:hover {
       transform: scale(1.2);
+    }
+    .uniraid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .uniraid-info, .uniraid-2026 {
+      flex: 1;
+      min-width: 280px;
     }
     .vlog {
       display: grid;
@@ -269,64 +276,52 @@
 
 
   <!-- UNIRAID 2026 -->
-  <section id="uniraid2026">
-    <h2 class="ca">UNIRAID</h2>
-    <h2 class="en">UNIRAID</h2>
-
-    <div class="ca">
-      <p>L'UNIRAID és molt més que una competició automobilística, és un rally universitari solidari que combina l'aventura amb acció social. Aquest esdeveniment, conegut també com el "Dakar Universitari", reuneix equips d'estudiants universitaris d'arreu d'Europa que preparen els seus cotxes per emprendre una aventura solidària única.</p>
-      <p>La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar material solidari, com ara material escolar, roba, joguines, productes d'higiene i altres de primera necessitat.</p>
-      <p>Els mesos previs a l'esdeveniment, que té lloc a principis de febrer, els estudiants han de:</p>
-      <ul>
-        <li>Preparar mecànicament el cotxe</li>
-        <li>Recaptar material solidari</li>
-        <li>Aconseguir col·laboradors i patrocinadors</li>
-        <li>Planificar la logística</li>
-      </ul>
-      <p>L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+    <section id="uniraid2026">
+    <div class="uniraid-container" style="display:flex; flex-wrap:wrap; gap:20px;">
       
-      <h3>UNIRAID 2026</h3> 
-      <p>L'edició 2026 tindrà lloc del 7 al 14 de febrer. Consta de 7 etapes regulars i una etapa marató de dos dies:</p>
-      <ul>
-        <li><strong>Etapa 0:</strong> Tànger - El Hajef </li>
-        <li><strong>Etapa 1:</strong> El Hajef - Aufous </li>
-        <li><strong>Etapa 2:</strong> Aufous - Merdani </li>
-        <li><strong>Etapa 3:</strong> Merdani - Erg Chebbi</li>
-        <li><strong>Etapa 4 & 5:</strong> Erg Chebbi - Nkob </li>
-        <li><strong>Etapa 6:</strong> Nkob - Marrakech</li>
-        <li><strong>Etapa 7:</strong> Marrakech - Tánger </li>
-      </ul>
-    </div>
-    
-    <div class="en">
-      <p>UNIRAID is much more than a competition, it is a charitable student rally that combines adventure with social action. This event, also known as the "University Dakar," brings together teams of university students from across Europe who prepare their own cars to embark on a unique solidarity adventure.</p>
-      <p>The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver charitable supplies, such as school supplies, clothing, toys, hygiene products, and other essentials.</p>
-      <p>In the months leading up to the event, which takes place in early February, students must:</p>
-      <ul>
-        <li>Mechanically prepare their car</li>
-        <li>Collect charitable supplies</li>
-        <li>Secure collaborators and sponsors</li>
-        <li>Plan logistics</li>
-      </ul>
-      <p>UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
-      
-      <h3>UNIRAID 2026</h3> 
-      <p>The 2026 edition will take place from February 7 to 14. It consists of 7 regular stages and a two-day marathon stage:</p>
-      <ul>
-        <li><strong>Stage 0:</strong> Tangier - El Hajef</li>
-        <li><strong>Stage 1:</strong> El Hajef - Aufous</li>
-        <li><strong>Stage 2:</strong> Aufous - Merdani</li>
-        <li><strong>Stage 3:</strong> Merdani - Erg Chebbi</li>
-        <li><strong>Stages 4 & 5:</strong> Erg Chebbi - Nkob</li>
-        <li><strong>Stage 6:</strong> Nkob - Marrakech</li>
-        <li><strong>Stage 7:</strong> Marrakech - Tangier</li>
-      </ul>
-    </div>
+      <!-- Columna esquerra: explicació general -->
+      <div class="uniraid-info" style="flex:1; min-width:280px;">
+        <div class="ca">
+          <p>L'UNIRAID és molt més que una competició automobilística, és un rally universitari solidari...</p>
+          <!-- resta del text de la secció -->
+        </div>
+        <div class="en">
+          <p>UNIRAID is much more than a competition, it is a charitable student rally...</p>
+        </div>
+      </div>
   
-    <img src="mapa_uniraid.png" alt="Mapa Uniraid" style="display:block; margin:20px auto; width:70%; max-width:600px; border-radius:15px;">
-
-    <a href="https://www.uniraid.org/" target="_blank" class="btn ca">Visita la web oficial</a>
-    <a href="https://www.uniraid.org/" target="_blank" class="btn en">Visit official website</a>
+      <!-- Columna dreta: UNIRAID 2026 com carta blau -->
+      <div class="uniraid-2026" style="flex:1; min-width:280px; background:#052493; color:#fff; padding:20px; border-radius:15px;">
+        <h3 class="ca">UNIRAID 2026</h3>
+        <h3 class="en">UNIRAID 2026</h3>
+        
+        <img src="mapa_uniraid.png" alt="Mapa Uniraid" style="width:100%; height:auto; border-radius:10px; margin-bottom:15px;">
+        
+        <div class="ca">
+          <ul>
+            <li><strong>Etapa 0:</strong> Tànger - El Hajef </li>
+            <li><strong>Etapa 1:</strong> El Hajef - Aufous </li>
+            <li><strong>Etapa 2:</strong> Aufous - Merdani </li>
+            <li><strong>Etapa 3:</strong> Merdani - Erg Chebbi</li>
+            <li><strong>Etapa 4 & 5:</strong> Erg Chebbi - Nkob </li>
+            <li><strong>Etapa 6:</strong> Nkob - Marrakech</li>
+            <li><strong>Etapa 7:</strong> Marrakech - Tànger </li>
+          </ul>
+        </div>
+        <div class="en">
+          <ul>
+            <li><strong>Stage 0:</strong> Tangier - El Hajef</li>
+            <li><strong>Stage 1:</strong> El Hajef - Aufous</li>
+            <li><strong>Stage 2:</strong> Aufous - Merdani</li>
+            <li><strong>Stage 3:</strong> Merdani - Erg Chebbi</li>
+            <li><strong>Stages 4 & 5:</strong> Erg Chebbi - Nkob</li>
+            <li><strong>Stage 6:</strong> Nkob - Marrakech</li>
+            <li><strong>Stage 7:</strong> Marrakech - Tangier</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
   </section>
 
   <!-- VLOG -->
@@ -360,8 +355,13 @@
   <section id="follow" style="text-align:center; padding:40px 20px; background:#f4f4f9;">
     <h2 class="ca">Segueix-nos</h2>
     <h2 class="en">Follow Us</h2>
-    <a href="https://www.instagram.com/lionracingteam" target="_blank" style="margin:0 10px; font-size:2rem;">📸</a>
-    <a href="https://www.linkedin.com/company/lion-racing-team" target="_blank" style="margin:0 10px; font-size:2rem;">🔗</a>
+    
+    <a href="https://www.instagram.com/lionracingteam" target="_blank">
+      <img src="instagram.png" alt="Instagram" style="width:50px; height:50px; margin:0 10px;">
+    </a>
+    <a href="https://www.linkedin.com/company/lion-racing-team" target="_blank">
+      <img src="linkedin.png" alt="LinkedIn" style="width:50px; height:50px; margin:0 10px;">
+    </a>
   </section>
 
   <!-- FOOTER -->
