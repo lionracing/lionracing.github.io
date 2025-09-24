@@ -83,6 +83,7 @@
       display: inline-block;
       margin-top: 20px auto;
       padding: 12px 25px;
+      width: auto;
       border-radius: 30px;
       text-decoration: none;
       background: #ea251c;
@@ -90,6 +91,10 @@
       font-weight: bold;
       transition: 0.3s;
       text-align: center;
+    }
+    #equip .btn, #uniraid2026 .btn {
+      display: inline-block;
+      margin: 20px auto;
     }
     .btn:hover {
       background: #c41f17;
@@ -126,6 +131,18 @@
     .member p {
       font-size: 0.95rem;
     }
+    .member .linkedin {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 1.5rem; 
+      color: #052493;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    
+    .member .linkedin:hover {
+      transform: scale(1.2);
+    }
     .vlog {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -138,6 +155,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.2s;
+      position: relative;
     }
     .card:hover {
       transform: scale(1.02);
@@ -149,6 +167,13 @@
     }
     .card p {
       padding: 15px;
+    }
+    .card .date{
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.8rem;
+      color: #888;
     }
     footer {
       background: #052493;
@@ -223,6 +248,7 @@
         <h3>Laia Ripoll</h3>
         <p class="ca">Apasionada de l’aventura i la mecànica, sempre amb energia per afrontar reptes.</p>
         <p class="en">Passionate about adventure and mechanics, always full of energy to face challenges.</p>
+        <a href="https://www.linkedin.com/in/laia-ripoll-graus-471283294/" target="_blank" class="linkedin">🔗</a>
       </div>
       <div class="member">
         <img src="inca_ciurana.jpg" alt="Inca Ciurana">
@@ -311,6 +337,7 @@
         <img src="foto1.jpg" alt="Foto del nostre cotxe">
         <p class="ca">Preparant el cotxe abans de l’aventura.</p>
         <p class="en">Preparing the car before the adventure.</p>
+        <span class="date">15/09/25</span>
       </div>
       <div class="card">
         <img src="foto2.jpg" alt="Foto del desert">
@@ -323,6 +350,13 @@
         <p class="en">The full team before the departure.</p>
       </div>
     </div>
+  </section>
+
+  <section id="follow" style="text-align:center; padding:40px 20px; background:#f4f4f9;">
+    <h2 class="ca">Segueix-nos</h2>
+    <h2 class="en">Follow Us</h2>
+    <a href="https://www.instagram.com/lionracingteam" target="_blank" style="margin:0 10px; font-size:2rem;">📸</a>
+    <a href="https://www.linkedin.com/company/lion-racing-team" target="_blank" style="margin:0 10px; font-size:2rem;">🔗</a>
   </section>
 
   <!-- FOOTER -->
