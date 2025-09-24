@@ -63,7 +63,7 @@
       color: #ffffff;
       padding: 25px;
       border-radius: 15px;
-      margin-button: 40px;
+      margin-bottom: 40px;
     }
     h1 {
       color: #ffffff;
@@ -202,11 +202,11 @@
     <nav>
       <a href="#equip" class="ca">L'Equip</a>
       <a href="#uniraid2026" class="ca">UNIRAID</a>
-      <a href="#vlog" class="ca">Vlog</a>
+      <a href="#vlog" class="ca">Blog</a>
       <a href="#follow" class="ca">Contacta’ns</a>
       <a href="#equip" class="en">The Team</a>
       <a href="#uniraid2026" class="en">UNIRAID</a>
-      <a href="#vlog" class="en">Vlog</a>
+      <a href="#vlog" class="en">Blog</a>
       <a href="#follow" class="en">Contact us</a>
       <!-- Banderes -->
       <img src="cat.png" alt="Català" class="flag" onclick="setLang('ca')">
@@ -214,24 +214,54 @@
     </nav>
   </header>
 
-   <!-- Intro -->
-  <section id="intro">
-    <h1 class="ca">Benvinguts a la nostra aventura!</h1>
-    <h1 class="en">Welcome to our adventure!</h1>
-    
-    <div class="ca">
-      <p style="text-align: justify;">Som dues enginyeres de Barcelona, preparant-nos per a una aventura única: <strong>UNIRAID 2026</strong>. La nostra missió és senzilla: recórrer durant 7 dies el desert del Marroc en un cotxe de 25 anys, <strong>entregant 40 kg de material solidari</strong>.</p>
-      <p style="text-align: justify;">Amb aquest viatge volem aportar recursos essencials a les comunitats locals i transmetre l’esperit de col·laboració i treball en equip.</p>
-      <p style="text-align: justify;">Segueix la nostra aventura i acompanya’ns mentre convertim quilòmetres en <strong>impacte social</strong>!</p>
+  <!-- Intro amb foto a dalt, text al mig i foto a baix -->
+  <section id="intro" style="position:relative; overflow:hidden; background:none; max-width:900px; margin:0 auto; border-radius:15px;">
+
+    <!-- Foto superior -->
+    <img src="foto1.jpg" alt="Foto superior" style="
+      width:100%; 
+      display:block; 
+      object-fit:cover; 
+      height:250px; 
+      border-radius:15px 15px 0 0;
+      margin:0;
+    ">
+
+    <!-- Bloc de text al mig -->
+    <div style="
+      background:#052493; 
+      padding:25px; 
+      color:#fff; 
+      line-height:1.6;
+    ">
+      <h1 class="ca" style="margin-bottom:10px; font-size:1.8rem;">Benvinguts a la nostra aventura!</h1>
+      <h1 class="en" style="margin-bottom:20px; font-size:1.6rem;">Welcome to our adventure!</h1>
+
+      <div class="ca">
+        <p style="text-align: justify;">Som dues enginyeres de Barcelona, preparant-nos per a una aventura única: <strong>UNIRAID 2026</strong>. La nostra missió és senzilla: recórrer durant 7 dies el desert del Marroc en un cotxe de 25 anys, <strong>entregant 40 kg de material solidari</strong>.</p>
+        <p style="text-align: justify;">Amb aquest viatge volem aportar recursos essencials a les comunitats locals i transmetre l’esperit de col·laboració i treball en equip.</p>
+        <p style="text-align: justify;">Segueix la nostra aventura i acompanya’ns mentre convertim quilòmetres en <strong>impacte social</strong>!</p>
+      </div>
+
+      <div class="en" style="margin-top:15px;">
+        <p style="text-align: justify;">We are two engineers from Barcelona, embarking on an incredible adventure: <strong>UNIRAID 2026</strong>. Our mission is simple: drive through the desert in Morocco for 7 days in a 25-year-old car, <strong>delivering 40 kg of donated supplies</strong>.</p> 
+        <p style="text-align: justify;">Through this journey, we aim to provide essential resources to communities in need and share the spirit of collaboration and teamwork.</p>
+        <p style="text-align: justify;">Follow our journey and join us as we turn kilometers into <strong>social impact</strong>!</p>
+      </div>
     </div>
-    
-    <div class="en">
-      <p style="text-align: justify;">We are two engineers from Barcelona, embarking on an incredible adventure: <strong>UNIRAID 2026</strong>. Our mission is simple: drive through the desert in Morocco for 7 days in a 25-year-old car, <strong>delivering 40 kg of donated supplies</strong>.</p> 
-      <p style="text-align: justify;">Through this journey, we aim to provide essential resources to communities in need and share the spirit of collaboration and teamwork.</p>
-      <p style="text-align: justify;">Follow our journey and join us as we turn kilometers into <strong>social impact</strong>!</p>
-    </div>
+
+    <!-- Foto inferior -->
+    <img src="foto2.jpg" alt="Foto inferior" style="
+      width:100%; 
+      display:block; 
+      object-fit:cover; 
+      height:250px; 
+      border-radius:0 0 15px 15px;
+      margin:0;
+    ">
+
   </section>
-  
+    
   <!-- L'Equip -->
   <section id="equip">
     <h2 style="font-family: 'Conthrax', sans-serif;">LION Racing Team</h2>
@@ -249,23 +279,25 @@
     <div class="team">
       <div class="member">
         <img src="laia_ripoll.jpg" alt="Laia Ripoll">
-        <h3 style="font-family: 'Conthrax', sans-serif;">Laia Ripoll</h3>
-        <p class="ca">Apasionada de l’aventura i la mecànica, sempre amb energia per afrontar reptes.</p>
-        <p class="en">Passionate about adventure and mechanics, always full of energy to face challenges.</p>
-        <a href="https://www.linkedin.com/in/laia-ripoll-graus-471283294/" target="_blank">
-          <img src="linkedin.png" alt=LinkedIn Laia Ripoll" style="width:30px; height:30px; margin-top:10px; border-radius:4px">
-        </a>
+        <h3 style="font-family: 'Conthrax', sans-serif; display: flex; align-items: center; gap: 8px;">
+          Laia Ripoll
+          <a href="https://www.linkedin.com/in/laia-ripoll-graus-471283294/" target="_blank" style="display:flex; align-items:center;">
+            <img src="linkedin.png" alt="LinkedIn Laia Ripoll" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
+          </a>
+        </h3>
+        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 23 anys i és de Lleida. Li agrada la Formula 1, els caballs i la platja.</p>
+        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 23 years old and is from Lleida. She likes Formula 1, horses and the beach.</p> -->
       </div>
       <div class="member">
         <img src="inca_ciurana.jpg" alt="Inca Ciurana">
         <h3 style="font-family: 'Conthrax', sans-serif; display: flex; align-items: center; gap: 8px;">
           Inca Ciurana
-          <a href="https://www.linkedin.com/in/inca-ciurana-montiel-783aa4256/" target="_blank">
-            <img src="linkedin.png" alt="LinkedIn Inca Ciurana" style="width:30px; height:30px;">
+          <a href="https://www.linkedin.com/in/inca-ciurana-montiel-783aa4256/" target="_blank" style="display:flex; align-items:center;">
+            <img src="linkedin.png" alt="LinkedIn Inca Ciurana" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
           </a>
         </h3>
-        <p class="ca">Amb esperit d’equip i ganes de viure experiències úniques al desert.</p>
-        <p class="en">With team spirit and eager to live unique experiences in the desert.</p>
+        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 22 anys i és de Girona. Li agrada el futbol, la muntanya i el motorsport.</p>
+        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 22 years old and is from Girona. She likes soccer, hiking and motorsport.</p> -->
       </div>
     </div>
   </section>
@@ -343,30 +375,32 @@
 
   <!-- VLOG -->
   <section id="vlog">
-    <h2 class="ca">Segueix-nos a l'aventura</h2>
-    <h2 class="en">Follow our adventure</h2>
-
-    <p class="ca">Aquí compartirem fotos i històries de la nostra aventura 🚗🔥</p>
-    <p class="en">Here we will share photos and stories of our adventure 🚗🔥</p>
+    <h2 class="ca">Blog</h2>
+    <h2 class="en">Blog</h2>
 
     <div class="vlog">
       <div class="card">
-        <img src="foto1.jpg" alt="Foto del nostre cotxe">
-        <p class="ca">Preparant el cotxe abans de l’aventura.</p>
-        <p class="en">Preparing the car before the adventure.</p>
-        <span class="date">23/09</span>
-      </div>
-      <div class="card">
         <img src="foto2.jpg" alt="Foto del desert">
-        <p class="ca">Un moment inoblidable durant el viatge al desert.</p>
-        <p class="en">An unforgettable moment during the desert trip.</p>
+        <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
+        <p style="margin-top:0px; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
+        <p style="text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
+        <span class="date">24/09</span>
       </div>
       <div class="card">
+        <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
+        <p style="margin-top:0px; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos a @lionracing.uniraid a Instagram i Tik Tok!</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
+        <p style="text-align: justify;" class="en">Launch of the team on social media. Follow us at @lionracing.uniraid in Instagram and Tik Tok!</p>
+        <span class="date">24/09</span>
+      </div>
+      <!-- <div class="card">
         <img src="foto3.jpg" alt="Foto de l’equip">
         <p class="ca">L’equip al complet abans de la sortida.</p>
         <p class="en">The full team before the departure.</p>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <section id="follow" style="text-align:center; padding:40px 20px; background:#f4f4f9;">
@@ -381,11 +415,11 @@
         <img src="linkedin.png" alt="LinkedIn" style="width:50px; height:50px; display:block;">
       </a>
       <a href="https://www.linkedin.com/company/lion-racing-team" target="_blank" style="display:inline-block; margin:0 10px;">
-        <img src="linkedin.png" alt="LinkedIn" style="width:50px; height:50px; display:block;">
+        <img src="tiktok.png" alt="TikTok" style="width:50px; height:50px; display:block;">
       </a>
     </div>
   
-    <div margin-top:30px;">
+    <div>
       <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn ca">Contacta’ns</a>
       <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn en">Contact us</a>
     </div>
