@@ -12,14 +12,20 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
+      padding-top: 70px;
     }
     header {
       background: linear-gradient(135deg, #052493, #ea251c);
       color: #fff;
-      padding: 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: fixed;
+      top:0;
+      right:0;
+      left:0;
+      z-index: 1000;
     }
     header img {
       height: 70px;
@@ -29,6 +35,17 @@
       font-size: 2rem;
       font-family: 'Conthrax', sans-serif;
     }
+
+    /* BOTÓ MENÚ HAMBURGUESA */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -53,6 +70,7 @@
       border-radius: 8px;
       border: 2px solid #fff;
     }
+
     section {
       max-width: 900px;
       margin: 40px auto;
@@ -133,7 +151,6 @@
       text-decoration: none;
       transition: transform 0.2s;
     }
-    
     .member .linkedin:hover {
       transform: scale(1.2);
     }
@@ -191,14 +208,55 @@
       font-weight: bold;
     }
     .en { display: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+      }
+      header img {
+        height: 50px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      /* Mostra botó hamburguesa */
+      .menu-toggle {
+        display: block;
+      }
+      /* Amaga el menú per defecte en mòbil */
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #052493;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 15px 0;
+        gap: 10px;
+        text-align: center;
+        border-top: 2px solid #fff;
+      }
+      nav.show {
+        display: flex;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header>
     <div style="display: flex; align-items: center; gap: 10px;">
       <img src="Logo_Blanc.png" alt="Logo Lion Racing Team">
     </div>
+    <button class="menu-toggle">☰</button>
     <nav>
       <a href="#equip" class="ca">L'Equip</a>
       <a href="#uniraid2026" class="ca">UNIRAID</a>
@@ -439,6 +497,13 @@
     }
     // Per defecte en català
     setLang('ca');
+  </script>
+
+  <!-- Script menú selector -->
+  <script>
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector("nav").classList.toggle("show");
+    });
   </script>
 </body>
 </html>
