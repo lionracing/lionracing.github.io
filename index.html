@@ -12,7 +12,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
-      padding-top: 70px;
+      padding-top: 85px;
     }
     header {
       background: linear-gradient(135deg, #052493, #ea251c);
@@ -70,11 +70,11 @@
       border-radius: 8px;
       border: 2px solid #fff;
     }
-
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+      scroll-margin-top: 105px;
     }
     #intro{
       background: #052493;
@@ -254,7 +254,9 @@
   <!-- HEADER -->
   <header>
     <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="Logo_Blanc.png" alt="Logo Lion Racing Team">
+      <a href="#">
+        <img src="Logo_Blanc.png" alt="Logo Lion Racing Team">
+      </a>
     </div>
     <button class="menu-toggle">☰</button>
     <nav>
@@ -438,19 +440,33 @@
 
     <div class="vlog">
       <div class="card">
-        <img src="foto2.jpg" alt="Foto del desert">
+        <img src="foto4.png" alt="Foto del desert">
         <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
-        <p style="margin-top:0px; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+        <p style="margin:0 0 15px 0; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
         <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
-        <p style="text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
-        <span class="date">24/09</span>
+        <p style="margin:0 0 15px 0; text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
+        <span class="date">25/09</span>
       </div>
       <div class="card">
         <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
         <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
-        <p style="margin-top:0px; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos a <strong>@lionracing.uniraid</strong> a Instagram i Tik Tok!</p>
+        <p style="margin:0; padding-bottom:15px; line-height: 1.2; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos!</p>
         <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
-        <p style="text-align: justify;" class="en">Launch of the team on social media. Follow us at @lionracing.uniraid in Instagram and Tik Tok!</p>
+        <p style="margin:0; padding-bottom:15px; line-height: 1.2; text-align: justify;" class="en">Launch of the team on social media. Follow us!</p>
+        <p style="margin: 0; padding-top:0; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
+          <a href="https://www.instagram.com/lionracing.uniraid/" target="_blank" style="display:flex; align-items:center;">
+            <img src="instagram.png" alt="Instagram Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
+          </a>
+          @lionracing.uniraid
+        </p>
+        <p style="margin: 0; padding-top:4px; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
+          <a href="https://www.tiktok.com/@lionracing.uniraid" target="_blank" style="display:flex; align-items:center;">
+            <img src="tiktok.jpg" alt="TikTok Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
+          </a>
+          @lionracing.uniraid
+        </p>
+        <p style="margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="ca">Estigueu atents, aviat presentarem el nostre cotxe🚀</p>
+        <p style="margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="en">Stay tuned, soon we will present our car🚀</p>
         <span class="date">24/09</span>
       </div>
       <!-- <div class="card">
@@ -485,8 +501,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="ca">Lion Racing Team © 2025 | Inspirat per <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
-    <p class="en">Lion Racing Team © 2025 | Inspired by <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+    <p class="ca">Lion Racing Team © 2025 | <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
+    <p class="en">Lion Racing Team © 2025 | <a href="https://www.uniraid.org/" target="_blank">Uniraid</a></p>
   </footer>
 
   <!-- Script idiomes -->
@@ -501,8 +517,27 @@
 
   <!-- Script menú selector -->
   <script>
-    document.querySelector(".menu-toggle").addEventListener("click", () => {
-      document.querySelector("nav").classList.toggle("show");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    // Obrir/tancar menú
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation(); // Evita que es tanqui immediatament
+      nav.classList.toggle("show");
+    });
+
+    // Tancar menú quan es clica un link del nav
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("show");
+      });
+    });
+
+    // Tancar menú quan es fa clic fora
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("show") && !nav.contains(e.target) && e.target !== menuToggle) {
+        nav.classList.remove("show");
+      }
     });
   </script>
 </body>
