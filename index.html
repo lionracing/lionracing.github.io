@@ -61,7 +61,7 @@
       font-family: 'Conthrax', sans-serif;
     }
     nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: #ffffff33;
     }
     nav img.flag {
       width: 30px;
@@ -72,16 +72,19 @@
     }
     section {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 40px auto 10px auto;
       padding: 0 20px;
-      scroll-margin-top: 105px;
+      scroll-margin-top: 86px;
     }
-    #intro{
+    #follow{
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    #news{
       background: #052493;
       color: #ffffff;
       padding: 25px;
       border-radius: 15px;
-      margin-bottom: 40px;
     }
     h1 {
       color: #ffffff;
@@ -110,8 +113,25 @@
       transition: 0.3s;
       text-align: center;
     }
+    .btn2 {
+      display: block;
+      width: max-content;
+      margin: 15px auto 0 auto;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      background: #052493;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+      font-family: 'Conthrax', sans-serif;
+    }
     .btn:hover {
       background: #c41f17;
+    }
+    .btn2:hover {
+      background: #0341a4;
     }
     .team {
       display: grid;
@@ -163,7 +183,7 @@
       flex: 1;
       min-width: 280px;
     }
-    .vlog {
+    .blog {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -187,6 +207,28 @@
     }
     .card p {
       padding: 15px;
+      margin: 0 0 15px 0;
+    }
+    .card h3{
+      margin: 15px 0 15px 0;
+      font-weight: bold; 
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .card-sponsor {
+      background-color: #052493;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 30px;
+    }
+    .card-sponsor p {
+      color: #fff;
+      padding: 7px 0; /* opcional, més ajustat */
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .card-sponsor:hover {
+      transform: scale(1.02);
     }
     .card .date{
       position: absolute;
@@ -239,6 +281,28 @@
       font-size: 0.8rem;
       margin-top: 5px;
     }
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tab-link {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 25px;
+      transition: background 0.3s;
+      font-family: 'Conthrax', sans-serif;
+    }
     /* RESPONSIVE */
     @media (max-width: 768px) {
       header {
@@ -249,6 +313,10 @@
       }
       header h1 {
         font-size: 1.5rem;
+      }
+      section {
+        margin-left:20px;
+        margin-right:20px
       }
       /* Mostra botó hamburguesa */
       .menu-toggle {
@@ -294,6 +362,10 @@
       .time-box span {
         font-size: 1.2rem;
       }
+      .caixes-sponsor-images img {
+        width: 100%;
+        margin-bottom: 15px; /* espai vertical entre imatges */
+      }
     }
   </style>
 </head>
@@ -302,20 +374,24 @@
   <!-- HEADER -->
   <header>
     <div style="display: flex; align-items: center; gap: 10px;">
-      <a href="#">
+      <a href="#news">
         <img src="Logo_Blanc.png" alt="Logo Lion Racing Team">
       </a>
     </div>
     <button class="menu-toggle">☰</button>
     <nav>
-      <a href="#equip" class="ca">L'Equip</a>
-      <a href="#uniraid2026" class="ca">UNIRAID</a>
-      <a href="#vlog" class="ca">Blog</a>
-      <a href="#follow" class="ca">Contacta’ns</a>
-      <a href="#equip" class="en">The Team</a>
-      <a href="#uniraid2026" class="en">UNIRAID</a>
-      <a href="#vlog" class="en">Blog</a>
-      <a href="#follow" class="en">Contact us</a>
+      <a href="#news" class="ca tab-link" data-tab="news">Novetats</a>
+      <a href="#equip" class="ca tab-link" data-tab="equip">L'Equip</a>
+      <a href="#uniraid" class="ca tab-link" data-tab="uniraid">UNIRAID</a>
+      <a href="#blog" class="ca tab-link" data-tab="blog">Blog</a>
+      <a href="#sponsors" class="ca tab-link" data-tab="sponsors">Col·labora</a>
+      <a href="#contact" class="ca tab-link" data-tab="contact">Contacta’ns</a>
+      <a href="#news" class="en tab-link" data-tab="news">News</a>
+      <a href="#equip" class="en tab-link" data-tab="equip">The Team</a>
+      <a href="#uniraid" class="en tab-link" data-tab="uniraid">UNIRAID</a>
+      <a href="#blog" class="en tab-link" data-tab="blog">Blog</a>
+      <a href="#sponsors" class="en tab-link" data-tab="sponsors">Sponsor us</a>
+      <a href="#contact" class="en tab-link" data-tab="contact">Contact us</a>
       <!-- Banderes -->
       <img src="cat.png" alt="Català" class="flag" onclick="setLang('ca')">
       <img src="uk.png" alt="English" class="flag" onclick="setLang('en')">
@@ -323,7 +399,7 @@
   </header>
 
   <!-- Intro amb foto a dalt, text al mig i foto a baix -->
-  <section id="intro" style="position:relative; overflow:hidden; background:none; max-width:900px; margin:0 auto; border-radius:15px;">
+  <section id="news" class="tab-content active" style="position:relative; overflow:hidden; background:none; max-width:900px; margin:0 auto; border-radius:15px;">
 
     <!-- Foto superior -->
     <img src="foto1.jpg" alt="Foto superior" style="
@@ -368,19 +444,76 @@
       margin:0;
     ">
 
-  </section>
+    <!-- News -->
+    <div class="blog" style="margin-top:20px;">
+      <!-- <div class="card">
+        <img src="foto4.png" alt="Foto del desert">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
+        <p style="color:black; margin:0 0 15px 0; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
+        <p style="color:black; margin:0 0 15px 0; text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
+        <span class="date">25/09</span>
+      </div> -->
+      
+      <div class="card">
+        <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
+        <p style="color:black; margin:0; padding-bottom:15px; line-height: 1.2; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos!</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
+        <p style="color:black; margin:0; padding-bottom:15px; line-height: 1.2; text-align: justify;" class="en">Launch of the team on social media. Follow us!</p>
+        <p style="color:black; margin: 0; padding-top:0; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
+          <a href="https://www.instagram.com/lionracing.uniraid/" target="_blank" style="display:flex; align-items:center;">
+            <img src="instagram.png" alt="Instagram Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
+          </a>
+          @lionracing.uniraid
+        </p>
+        <p style="color:black; margin: 0; padding-top:4px; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
+          <a href="https://www.tiktok.com/@lionracing.uniraid" target="_blank" style="display:flex; align-items:center;">
+            <img src="tiktok.jpg" alt="TikTok Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
+          </a>
+          @lionracing.uniraid
+        </p>
+        <p style="color:black; margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="ca">Estigueu atents, aviat presentarem el nostre cotxe🚀</p>
+        <p style="color:black; margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="en">Stay tuned, soon we will present our car🚀</p>
+        <span class="date">24/09</span>
+      </div>
+    </div>
+    <!-- countdown -->
+    <div id="countdown">
+      <div style="background:#052493; padding:20px; border-radius:15px;">
+        <h3 class="ca" style="text-align:center; color:#fff;">Compte enrere</h3>
+        <h3 class="en" style="text-align:center; color:#fff;">Countdown</h3>
+
+        <!-- Català -->
+        <div class="countdown ca">
+          <div class="time-box"><span class="days">0</span><div class="time-label">Dies</div></div>
+          <div class="time-box"><span class="hours">0</span><div class="time-label">Hores</div></div>
+          <div class="time-box"><span class="minutes">0</span><div class="time-label">Minuts</div></div>
+          <div class="time-box"><span class="seconds">0</span><div class="time-label">Segons</div></div>
+        </div>
+
+        <!-- Anglès -->
+        <div class="countdown en">
+          <div class="time-box"><span class="days">0</span><div class="time-label">Days</div></div>
+          <div class="time-box"><span class="hours">0</span><div class="time-label">Hours</div></div>
+          <div class="time-box"><span class="minutes">0</span><div class="time-label">Minutes</div></div>
+          <div class="time-box"><span class="seconds">0</span><div class="time-label">Seconds</div></div>
+        </div>
+      </div>
+    </div>
+  </section>  
     
   <!-- L'Equip -->
-  <section id="equip">
+  <section id="equip" class="tab-content">
     <h2 style="font-family: 'Conthrax', sans-serif;">LION Racing Team</h2>
   
     <p style="text-align: justify;" class="ca">
-      Som dues estudiants d’enginyeria industrial apassionades pel motor i l’aventura. Participar a l’UNIRAID ens permet combinar la nostra passió per l’enginyeria i els cotxes amb un projecte solidari.
-      Preparar el cotxe amb les nostres pròpies mans i recórrer el Marroc ajudant comunitats locals fa que aquesta experiència sigui única i motivadora.
+      Som <strong>dues estudiants d’enginyeria industrial</strong> apassionades pel motor i l’aventura. Participar a l’UNIRAID ens permet combinar la nostra passió per l’enginyeria i els cotxes amb un <strong>projecte solidari</strong>.
+      Preparar el cotxe amb les nostres pròpies mans i recórrer el Marroc ajudant comunitats locals fa que aquesta <strong>experiència sigui única i motivadora</strong>.
     </p>
     <p style="text-align: justify;" class="en">
-      We are two industrial engineering students united by a passion for motors and adventure. UNIRAID gives us the chance to combine our love for engineering and cars with a meaningful solidarity project.
-      Working on the car with our own hands and driving through Morocco to support local communities makes this experience truly unique and inspiring.
+      We are <strong>two industrial engineering students</strong> united by a passion for motors and adventure. UNIRAID gives us the chance to combine our love for engineering and cars with a <strong>meaningful solidarity project</strong>.
+      Working on the car with our own hands and driving through Morocco to support local communities makes this <strong>experience truly unique and inspiring</strong>.
     </p>
   
     <!-- Cards de membres -->
@@ -412,14 +545,14 @@
 
 
   <!-- UNIRAID 2026 -->
-    <section id="uniraid2026">
+  <section id="uniraid" class="tab-content">
     <h2 style="font-family: 'Conthrax', sans-serif;">UNIRAID</h2>
     <div class="uniraid-container" style="display:flex; flex-wrap:wrap; gap:20px;">
       
       <div class="uniraid-info" style="flex:1; min-width:280px;">
         <div class="ca">
-          <p style="text-align: justify; margin-top:0px;">L'UNIRAID és molt més que una competició automobilística, és un rally universitari solidari que combina l'aventura amb acció social. Aquest esdeveniment, conegut també com el "Dakar Universitari", reuneix equips d'estudiants universitaris d'arreu d'Europa que preparen els seus cotxes per emprendre una aventura solidària única.</p> 
-          <p style="text-align: justify;">La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar material solidari, com ara material escolar, roba, joguines, productes d'higiene i altres de primera necessitat.</p> 
+          <p style="text-align: justify; margin-top:0px;">L'UNIRAID és molt més que una competició automobilística, és un <strong>rally universitari solidari</strong> que combina l'aventura amb acció social. Aquest esdeveniment, conegut també com el "Dakar Universitari", reuneix equips d'estudiants universitaris d'arreu d'Europa que preparen els seus cotxes per emprendre una aventura solidària única.</p> 
+          <p style="text-align: justify;">La competició consisteix en una <strong>ruta de set dies pel Marroc</strong>, durant la qual els equips recorren escoles i comunitats locals per <strong>lliurar material solidari</strong>, com ara material escolar, roba, joguines, productes d'higiene i altres de primera necessitat.</p> 
           <p style="text-align: justify;">Els mesos previs a l'esdeveniment, que té lloc a principis de febrer, els estudiants han de:</p> 
           <ul> 
             <li>Preparar mecànicament el cotxe</li> 
@@ -427,11 +560,11 @@
             <li>Aconseguir col·laboradors i patrocinadors</li> 
             <li>Planificar la logística</li> 
           </ul> 
-          <p style="text-align: justify;">L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
+          <p style="text-align: justify;">L'UNIRAID representa així tres valors fonamentals: <strong>la solidaritat, la sostenibilitat i la formació.</strong></p>
         </div>
         <div class="en">
-          <p style="text-align: justify;">UNIRAID is much more than a competition, it is a charitable student rally that combines adventure with social action. This event, also known as the "University Dakar," brings together teams of university students from across Europe who prepare their own cars to embark on a unique solidarity adventure.</p> 
-          <p style="text-align: justify;">The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver charitable supplies, such as school supplies, clothing, toys, hygiene products, and other essentials.</p> 
+          <p style="text-align: justify;">UNIRAID is much more than a competition, it is a <strong>charitable student rally</strong> that combines adventure with social action. This event, also known as the "University Dakar," brings together teams of university students from across Europe who prepare their own cars to embark on a unique solidarity adventure.</p> 
+          <p style="text-align: justify;">The competition consists of a <strong>seven-day route through Morocco</strong>, during which teams visit schools and local communities to <strong>deliver charitable supplies</strong>, such as school supplies, clothing, toys, hygiene products, and other essentials.</p> 
           <p style="text-align: justify;">In the months leading up to the event, which takes place in early February, students must:</p> 
           <ul> 
             <li>Mechanically prepare their car</li> 
@@ -439,7 +572,7 @@
             <li>Secure collaborators and sponsors</li> 
             <li>Plan logistics</li> 
           </ul> 
-          <p style="text-align: justify;">UNIRAID thus represents three core values: solidarity, sustainability, and education.</p> 
+          <p style="text-align: justify;">UNIRAID thus represents three core values: <strong>solidarity, sustainability, and education.</strong></p> 
         </div>
         <a href="https://www.uniraid.org/" target="_blank">
           <img src="foto_uniraid.png" alt="Foto UNIRAID" style="display:block; width:80%; height:auto; border-radius:10px; margin:20px auto 0 auto;">
@@ -477,26 +610,48 @@
           </ul>
         </div>
       </div>
-  
     </div>
+    <!-- countdown -->
+      <div id="countdown">
+        <div style="background:#052493; padding:20px; border-radius:15px;">
+          <h3 class="ca" style="text-align:center; color:#fff;">Compte enrere</h3>
+          <h3 class="en" style="text-align:center; color:#fff;">Countdown</h3>
+
+          <!-- Català -->
+          <div class="countdown ca">
+            <div class="time-box"><span class="days">0</span><div class="time-label">Dies</div></div>
+            <div class="time-box"><span class="hours">0</span><div class="time-label">Hores</div></div>
+            <div class="time-box"><span class="minutes">0</span><div class="time-label">Minuts</div></div>
+            <div class="time-box"><span class="seconds">0</span><div class="time-label">Segons</div></div>
+          </div>
+
+          <!-- Anglès -->
+          <div class="countdown en">
+            <div class="time-box"><span class="days">0</span><div class="time-label">Days</div></div>
+            <div class="time-box"><span class="hours">0</span><div class="time-label">Hours</div></div>
+            <div class="time-box"><span class="minutes">0</span><div class="time-label">Minutes</div></div>
+            <div class="time-box"><span class="seconds">0</span><div class="time-label">Seconds</div></div>
+          </div>
+        </div>
+      </div>
   </section>
 
   <!-- VLOG -->
-  <section id="vlog">
+  <section id="blog" class="tab-content">
     <h2 style="font-family: 'Conthrax', sans-serif;" class="ca">Blog</h2>
     <h2 style="font-family: 'Conthrax', sans-serif;" class="en">Blog</h2>
 
-    <div class="vlog">
+    <div class="blog">
       <div class="card">
-        <img src="foto4.png" alt="Foto del desert">
-        <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
-        <p style="margin:0 0 15px 0; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
-        <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
-        <p style="margin:0 0 15px 0; text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
-        <span class="date">25/09</span>
+        <img src="promo.jpeg" alt="Campanya de marqueting">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Campanya de màrqueting</h3>
+        <p style="margin:0 0 15px 0; text-align:justify;" class="ca">Després de presentar l’equip a les xarxes socials, vam donar el tret de sortida a la nostra primera campanya de màrqueting. Vam sortir als carrers de Barcelona, amb només una càmera i una visió, per gravar el primer contingut promocional de la nostra marca. El nostre objectiu és guanyar visibilitat a través d’un relat creatiu i original, demostrant als patrocinadors que sabem generar una connexió real amb el públic.</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">Marketing campaign</h3>
+        <p style="margin:0 0 15px 0; text-align: justify;" class="en">After launching the team on social media, we kicked off our first marketing campaign. We took to the streets of Barcelona, with nothing but a camera and a vision, to film the very first promotional content for our brand. Our goal is to gain visibility through creative and original storytelling, proving our value to sponsors who seek genuine engagement.</p>
+        <span class="date">29/09</span>
       </div>
       <div class="card">
-        <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
+        <img src="Logo_FonsBlau.png" alt="Foto logo">
         <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
         <p style="margin:0; padding-bottom:15px; line-height: 1.2; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos!</p>
         <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
@@ -525,7 +680,91 @@
     </div> -->
   </section>
 
-  <section id="follow" style="text-align:center; padding:20px 20px; background:#f4f4f9;">
+  <section id="sponsors" class="tab-content">
+    <h2 class="ca" style="font-family: 'Conthrax', sans-serif;">Col·labora</h2>
+    <h2 class="en" style="font-family: 'Conthrax', sans-serif;">Sponsor us</h2>
+  
+    <div style="text-align: justify;" class="ca">
+      <p>Actualment, estem buscant patrocinadors que vulguin donar suport a la nostra missió mitjançant <strong>contribucions econòmiques, serveis o components del cotxe.</strong> 
+        També cerquem <strong>donacions solidàries</strong>, com ara material escolar, productes d’higiene i altres articles essencials.</p>
+      <p>A canvi, oferim una <strong>gran visibilitat i promoció de marca</strong> a través de contingut original i atractiu.
+        Col·laborant amb nosaltres, la vostra empresa s'integra en un projecte comunitari que genera un canvi real i 
+        <strong>connecta la vostra marca amb un impacte social significatiu.</strong></p>
+    </div>
+    <div style="text-align: justify;" class="en">
+      <p>We are actively seeking sponsors to support our mission through <strong>financial contributions, services, or car components.</strong> 
+        We also welcome <strong>in-kind donations</strong> such as school supplies, hygiene products, and other essential items.</p>
+      <p>In return, we provide <strong>high-impact visibility and brand promotion</strong> through original and engaging content. 
+        By partnering with us, your company becomes part of a community project that generates real-world impact, directly <strong>connecting your brand to meaningful social change.</strong></p>
+    </div>
+    <div class="blog">
+      <!-- promoció -->
+      <div class="card-sponsor">
+        <div class="ca">
+          <h2 style="color: #ffffff;">PROMOCIÓ</h2>
+          <p>Logotip al cotxe i samarreta</p>
+          <p>Posts a les xarxes socials</p>
+        </div>
+        <div class="en">
+          <h2 style="color: #ffffff;">PROMOTION</h2>
+          <p>Logo on the car & merchandise</p>
+          <p>Posts on social media</p>
+        </div>
+        <img src="shirt.png" alt="Samarreta amb logos" style="margin-top:15px; width:100%; border-radius: 5px;">
+      </div>
+      <!-- visibilitat -->
+      <div class="card-sponsor" style="background-color:#8b4161; ">
+        <div class="ca">
+          <h2 style="color: #ffffff;">VISIBILITAT</h2>
+          <p>Exposició de marca</p>
+          <p>Presència als esdeveniments</p>
+        </div>
+        <div class="en">
+          <h2 style="color: #ffffff;">VISIBILITY</h2>
+          <p>Brand exposure</p>
+          <p>Presence in our events</p>
+        </div>
+        <img src="visibility.png" alt="Visibilitat marca" style="margin-top:30px; width:100%; border-radius: 15px;">
+      </div>
+      <!-- impacte social -->
+      <div class="card-sponsor" style="background-color: #e38a1c;">
+        <div class="ca">
+          <h2 style="color: #ffffff;">IMPACTE SOCIAL</h2>
+          <p>Aportació i associació a un projecte solidari</p>
+        </div>
+        <div class="en">
+          <h3 style="color: #ffffff;">SOCIAL IMPACT</h2>
+          <p>Contribution and association with a charitable project</p>
+        </div>
+        <img src="impact.png" alt="Icono impacte social" style="margin-top:15px; width:85%; border-radius: 5px;">
+      </div>
+    </div>
+    <p style="margin-top:25px" class="ca">Contacta'ns i estarem encatades de proporcionar més informació sobre el patrocini!</p>
+    <p style="margin-top:25px" class="en">Contact us and we will be delighted to provide more information about the sponsorship!</p>
+    <div>
+      <a href="mailto:lionracing.uniraid@gmail.com" class="btn2 ca">Col·labora</a>
+      <a href="mailto:lionracing.uniraid@gmail.com" class="btn2 en">Sponsor us</a>
+    </div>
+  </section>
+
+  <section id="contact" class="tab-content">
+    <h2 class="ca" style="font-family: 'Conthrax', sans-serif;">Contacta'ns</h2>
+    <h2 class="en" style="font-family: 'Conthrax', sans-serif;">Contact us</h2>
+  
+    <div style="text-align: justify;">
+      <p class="ca">Omple el formulari següent i ens posarem en contacte amb tu per resoldre qualsevol consulta!</p>
+      <p class="en">Fill out the form below and we will contact you to address your inquiry!</p>
+    </div>
+    <div>
+      <a href="https://forms.gle/Mra4e4ZmENgEyaDa6" target="_blank" class="btn2 ca">Contacta’ns</a>
+      <a href="https://forms.gle/Mra4e4ZmENgEyaDa6" target="_blank" class="btn2 en">Contact us</a>
+    </div>
+    <div>
+      <img src="foto3.jpg" alt="Cotxe a la uniraid" style="margin:20px auto; display:block; width:100%; max-width: 800px; border-radius: 30px;">
+    </div>
+  </section>
+
+  <section id="follow" style="text-align:center; padding:10px 10px; background:#f4f4f9;">
     <h2 class="ca" style="font-family: 'Conthrax', sans-serif;">Segueix-nos</h2>
     <h2 class="en" style="font-family: 'Conthrax', sans-serif;">Follow Us</h2>
   
@@ -544,29 +783,6 @@
     <div>
       <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn ca">Contacta’ns</a>
       <a href="mailto:lionracing.uniraid@gmail.com" style="font-family: 'Conthrax', sans-serif;" class="btn en">Contact us</a>
-    </div>
-  </section>
-
-  <section id="countdown">
-    <div style="background:#052493; padding:20px; border-radius:15px;">
-      <h3 class="ca" style="text-align:center; color:#fff;">Compte enrere</h3>
-      <h3 class="en" style="text-align:center; color:#fff;">Countdown</h3>
-
-      <!-- Català -->
-      <div class="countdown ca">
-        <div class="time-box"><span class="days">0</span><div class="time-label">Dies</div></div>
-        <div class="time-box"><span class="hours">0</span><div class="time-label">Hores</div></div>
-        <div class="time-box"><span class="minutes">0</span><div class="time-label">Minuts</div></div>
-        <div class="time-box"><span class="seconds">0</span><div class="time-label">Segons</div></div>
-      </div>
-
-      <!-- Anglès -->
-      <div class="countdown en">
-        <div class="time-box"><span class="days">0</span><div class="time-label">Days</div></div>
-        <div class="time-box"><span class="hours">0</span><div class="time-label">Hours</div></div>
-        <div class="time-box"><span class="minutes">0</span><div class="time-label">Minutes</div></div>
-        <div class="time-box"><span class="seconds">0</span><div class="time-label">Seconds</div></div>
-      </div>
     </div>
   </section>
 
@@ -641,5 +857,44 @@
   updateCountdown();
   </script>
 
+  <script>
+    const tabs = document.querySelectorAll(".tab-link");
+    const contents = document.querySelectorAll(".tab-content");
+
+    // Funció per activar una pestanya
+    function activateTab(targetId) {
+      // Mostra el contingut corresponent
+      contents.forEach(c => c.classList.remove("active"));
+      document.getElementById(targetId).classList.add("active");
+
+      // Marca la pestanya activa
+      tabs.forEach(t => t.classList.remove("active"));
+      const activeTab = document.querySelector(`.tab-link[data-tab="${targetId}"]`);
+      if (activeTab) activeTab.classList.add("active");
+    }
+
+    // Canvi de pestanya al fer clic
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-tab");
+        activateTab(target);
+      });
+    });
+
+    // Activar la pestanya "news" per defecte al carregar la pàgina
+    document.addEventListener("DOMContentLoaded", () => {
+      activateTab("news");
+    });
+  </script>
+  
+  <script>
+    // Selecciona el logo
+    const logo = document.querySelector('header a[href="#news"] img');
+
+    logo.addEventListener("click", (e) => {
+      activateTab("news"); // Activa la pestanya "news"
+    });
+  </script>
+  
 </body>
 </html>
