@@ -345,13 +345,19 @@
         font-size: 1rem;
       }
       #countdown {
-        flex-direction: column; /* apila verticalment */
+        display:flex;
+        justify-content: center;
         align-items: center;
+        flex-direction: column; 
+        margin-left: auto;
+        margin-right: auto;
+        text-align:center;
         gap: 10px;
       }
       .countdown {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
         gap: 10px;
       }
       .time-box {
