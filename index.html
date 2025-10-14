@@ -185,7 +185,8 @@
     }
     .blog {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+      grid-template-columns: repeat(2,1fr);
       gap: 20px;
       margin-top: 20px;
     }
@@ -343,6 +344,9 @@
       nav a {
         padding: 10px;
         font-size: 1rem;
+      }
+      .blog{
+        grid-template-columns: 1fr;
       }
       #countdown {
         display:flex;
@@ -648,6 +652,20 @@
     <h2 style="font-family: 'Conthrax', sans-serif;" class="en">Blog</h2>
 
     <div class="blog">
+      <div class="card">
+        <img src="comunitat.jpg" alt="Lion">
+        <h3 style="margin:15px 0 0px 15px" class="ca">Una missió solidària</h3>
+        <p style="margin:0 0 15px 0; text-align:justify;" class="ca">La UniRaid és més que una aventura, és un projecte amb propòsit solidari.
+          Cada equip participant transporta fins a 40 kg de material solidari destinats a les comunitats del desert que més ho necessiten.
+          La nostra missió és lliurar materials de primera necessitat que contribueixin a millorar el seu dia a dia: roba, material escolar, productes d’higiene, joguines i molt més.
+          Creiem que la solidaritat també es pot conduir, i que cada quilòmetre recorregut pot marcar una diferència real.</p>
+        <h3 style="margin:15px 0 0px 15px" class="en">A mission of solidarity</h3>
+        <p style="margin:0 0 15px 0; text-align: justify;" class="en">UniRaid is more than an adventure, it's a project with a purpose.
+          Each participating team carries up to 40 kg of essential supplies to support communities in the desert that need them most.
+          Our mission is to deliver everyday essentials that help improve people’s lives: clothing, school materials, hygiene products, toys, and more.
+          We believe that solidarity can also be driven, and that every kilometer we travel can make a real difference.</p>
+        <span class="date">13/10</span>
+      </div>
       <div class="card">
         <img src="Logo_FonsBlau.png" alt="Lion">
         <h3 style="margin:15px 0 0px 15px" class="ca">Per què LION?</h3>
