@@ -215,8 +215,13 @@
       font-weight: bold; 
       font-family: Arial, Helvetica, sans-serif;
     }
+    .sponsor{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap:20px;
+      margin-top: 20px;
+    }
     .card-sponsor {
-      background-color: #052493;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -237,6 +242,43 @@
       right: 15px;
       font-size: 0.8rem;
       color: #888;
+    }
+    .newscardsection{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      gap:20px;
+      margin-top: 20px;
+    }
+    .news-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .card-top-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .profile-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: contain;
+      background: white;
+      position: absolute;
+      top: 70px; /* ajusta per centrar i solapar */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .card-content {
+      margin-top: 80px;
+      padding: 0 20px;
     }
     footer {
       background: #052493;
@@ -455,39 +497,18 @@
     ">
 
     <!-- News -->
-    <div class="blog" style="margin-top:20px;">
-      <!-- <div class="card">
-        <img src="foto4.png" alt="Foto del desert">
-        <h3 style="margin:15px 0 0px 15px" class="ca">Què és la UNIRAID?</h3>
-        <p style="color:black; margin:0 0 15px 0; text-align:justify;" class="ca">La UNIRAID és un rally universitari solidari que combina l'aventura amb acció social. La competició consisteix en una ruta de set dies pel Marroc, durant la qual els equips recorren escoles i comunitats locals per lliurar 40kg de material solidari. L'UNIRAID representa així tres valors fonamentals: la solidaritat, la sostenibilitat i la formació.</p>
-        <h3 style="margin:15px 0 0px 15px" class="en">What is UNIRAID?</h3>
-        <p style="color:black; margin:0 0 15px 0; text-align: justify;" class="en">UNIRAID is a charitable student rally that combines adventure with social action. The competition consists of a seven-day route through Morocco, during which teams visit schools and local communities to deliver 40kg of charitable supplies. UNIRAID thus represents three core values: solidarity, sustainability, and education.</p>
-        <span class="date">25/09</span>
-      </div> -->
-      
-      <!-- <div class="card">
-        <img src="Logo_FonsBlau.png" alt="Foto del nostre cotxe">
-        <h3 style="margin:15px 0 0px 15px" class="ca">Presentació de LION Racing Team</h3>
-        <p style="color:black; margin:0; padding-bottom:15px; line-height: 1.2; text-align:justify;" class="ca">Presentació de l'equip a les xarxes socials. Segueix-nos!</p>
-        <h3 style="margin:15px 0 0px 15px" class="en">Launch of LION Racing Team</h3>
-        <p style="color:black; margin:0; padding-bottom:15px; line-height: 1.2; text-align: justify;" class="en">Launch of the team on social media. Follow us!</p>
-        <p style="color:black; margin: 0; padding-top:0; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
-          <a href="https://www.instagram.com/lionracing.uniraid/" target="_blank" style="display:flex; align-items:center;">
-            <img src="instagram.png" alt="Instagram Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
-          </a>
-          @lionracing.uniraid
-        </p>
-        <p style="color:black; margin: 0; padding-top:4px; padding-bottom:0; display: flex; align-items: center; gap: 8px;">
-          <a href="https://www.tiktok.com/@lionracing.uniraid" target="_blank" style="display:flex; align-items:center;">
-            <img src="tiktok.jpg" alt="TikTok Petit" style="width:25px; height:25px; margin:0; border-radius:4px;">
-          </a>
-          @lionracing.uniraid
-        </p>
-        <p style="color:black; margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="ca">Estigueu atents, aviat presentarem el nostre cotxe🚀</p>
-        <p style="color:black; margin:0 0 15px 0; padding-top:14px; line-height: 1.2; text-align:justify;" class="en">Stay tuned, soon we will present our car🚀</p>
-        <span class="date">24/09</span>
-      </div> -->
+    <div class="newscardsection" style="margin-top:20px;">
+      <div class="news-card">
+        <img src="sunset.jpg" alt="Imatge superior" class="card-top-img">
+
+        <img src="gofundme.png" alt="GoFundMe" class="profile-img">
+
+        <div class="card-content">
+          <a href="https://gofund.me/fd1cd055f" class="btn2">Col·labora</a>
+        </div>
+      </div>
     </div>
+    
     <!-- countdown -->
     <div id="countdown">
       <div style="background:#052493; padding:20px; border-radius:15px;">
@@ -729,9 +750,9 @@
       <p>In return, we provide <strong>high-impact visibility and brand promotion</strong> through original and engaging content. 
         By partnering with us, your company becomes part of a community project that generates real-world impact, directly <strong>connecting your brand to meaningful social change.</strong></p>
     </div>
-    <div class="blog">
+    <div class="sponsor">
       <!-- promoció -->
-      <div class="card-sponsor">
+      <div class="card-sponsor" style="background-color:#052493;">
         <div class="ca">
           <h2 style="color: #ffffff;">PROMOCIÓ</h2>
           <p>Logotip al cotxe i samarreta</p>
