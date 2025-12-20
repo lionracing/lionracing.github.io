@@ -372,6 +372,45 @@
       transition: background 0.3s;
       font-family: 'Conthrax', sans-serif;
     }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 100px;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 30%;
+      z-index: 2;
+    }
+
+    .carousel .prev {
+      left: 10px;
+    }
+
+    .carousel .next {
+      right: 10px;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       header {
@@ -716,6 +755,53 @@
     <h2 style="font-family: 'Conthrax', sans-serif;" class="en">Blog</h2>
 
     <div class="blog">
+      <div class="card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="Recomotor1.jpg" alt="Recomotor">
+            <img src="Recomotor2.jpg" alt="Recomotor">
+            <img src="Recomotor3.jpg" alt="Recomotor">
+          </div>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+          <h3 style="margin:15px 0 0px 15px" class="ca">La LIONETA rep suport de Recomotor!♻️</h3>
+          <p style="margin:0 0 15px 0; text-align:justify;" class="ca">Divendres vam visitar el local de Recomotor a Sant Andreu de la Barca per buscar les peces que necessitàvem per a la LIONETA.
+            Recomotor és una empresa catalana que dona segona vida a les peces dels vehicles mitjançant la recuperació, revisió i comercialització de recanvis reutilitzats per a cotxes. Des de la seva fundació l’any 2021, s’ha consolidat com un referent en economia circular aplicada al sector de l’automoció, transformant els desguassos tradicionals en centres moderns de desmuntatge i distribució de peces per a tallers i professionals.
+            Durant la visita vam aconseguir diversos components per al nostre cotxe, com ara dos conjunts de llanda i pneumàtic, el panell de control, les molles del maleter, les llums interiors, entre d’altres.
+            Moltes gràcies a tot l’equip de Recomotor per rebre’ns tan bé i per col·laborar amb la nostra iniciativa!🙏 
+          </p>
+          <h3 style="margin:15px 0 0px 15px" class="en">The LIONETA gets support from Recomotor! ♻️</h3>
+          <p style="margin:0 0 15px 0; text-align: justify;" class="en">On Friday, we visited Recomotor’s facility in Sant Andreu de la Barca to pick up the parts we needed for the LIONETA.
+            Recomotor is a Catalan company that gives vehicles’ parts a second life through the recovery, inspection, and sale of reused car components. Since its founding in 2021, it has become a reference in circular economy within the automotive sector, transforming traditional scrapyards into modern dismantling and distribution centers for workshops and professionals.
+            During our visit, we picked up several components for our car, including two sets of wheels and tires, the control panel, trunk springs, interior lights, and more.
+            Many thanks to the entire Recomotor team for welcoming us so warmly and for supporting our initiative!🙏          
+          </p>
+          <span class="date">20/12</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="Lioneta1.jpg" alt="Lioneta">
+            <img src="Lioneta2.jpg" alt="Lioneta">
+          </div>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+          <h3 style="margin:15px 0 0px 15px" class="ca">La LIONETA ja és aquí🚀</h3>
+          <p style="margin:0 0 15px 0; text-align:justify;" class="ca">Us presentem la LIONETA: el cotxe amb el qual participarem a la UNIRAID 2026. 
+            Es tracta d’un Ford Focus de l’any 1998, equipat amb un motor Ford 1.6 Zetec-SE de 100 cavalls, 4 cilindres i una cilindrada de 1.596 cm³. 
+            Durant els pròxims mesos el prepararem per afrontar aquest gran repte. Entre les modificacions obligatòries, instal·larem ganxos de remolc i un cobre càrter per protegir el motor en els terrenys més exigents.
+            A més, també hi farem altres modificacions extra per convertir-la en un autèntic supercotxe del desert!!
+          </p>
+          <h3 style="margin:15px 0 0px 15px" class="en">The LIONETA is here🚀</h3>
+          <p style="margin:0 0 15px 0; text-align: justify;" class="en">Introducing the LIONETA: the car with which we will take part in UNIRAID 2026.
+            It is a 1998 Ford Focus, equipped with a 1.6 Zetec-SE engine producing 100 horsepower, with 4 cylinders and a displacement of 1,596 cm³.
+            Over the coming months, we will prepare it to face this great challenge. Among the mandatory modifications, we will install tow hooks and an engine skid plate to protect the engine on the most demanding terrain.
+            In addition, we will also make extra modifications to turn it into a true desert supercar!!         
+          </p>
+          <span class="date">15/12</span>
+        </div>
+      </div>
       <div class="card">
         <img src="Laia_ripoll_2.jpg" alt="Laia ripoll">
         <h3 style="margin:15px 0 0px 15px" class="ca">Coneix a l'equip!</h3>
@@ -1068,6 +1154,24 @@
       activateTab("news"); // Activa la pestanya "news"
     });
   </script>
-  
+
+  <script>
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const images = carousel.querySelector('.carousel-images');
+    const imgCount = images.children.length;
+    let index = 0;
+
+    carousel.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % imgCount;
+      images.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    carousel.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + imgCount) % imgCount;
+      images.style.transform = `translateX(-${index * 100}%)`;
+    });
+  });
+  </script>
+
 </body>
 </html>
