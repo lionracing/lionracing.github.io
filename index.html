@@ -197,6 +197,9 @@
       gap: 20px;
       margin-top: 20px;
     }
+    .member.full-width {
+      grid-column: 1 / -1; /* Ocupa totes les columnes */
+    }
     .card {
       background: #fff;
       border-radius: 15px;
@@ -517,6 +520,22 @@
 
   <!-- Intro amb foto a dalt, text al mig i foto a baix -->
   <section id="news" class="tab-content active" style="position:relative; overflow:hidden; background:none; max-width:900px; margin:0 auto; border-radius:15px;">
+    <!-- Video portada -->
+    <video 
+      autoplay  
+      loop
+      muted 
+      playsinline
+      style="
+        width:100%; 
+        height:350px; 
+        object-fit:cover; 
+        border-radius:15px;
+        display:block;
+        margin-bottom: 15px; /* aquí poses l'espai que vols */
+      ">
+      <source src="portada.mp4" type="video/mp4">
+    </video>
 
     <!-- Foto superior -->
     <img src="foto1.jpg" alt="Foto superior" style="
@@ -639,8 +658,6 @@
             <img src="linkedin.png" alt="LinkedIn Laia Ripoll" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
           </a>
         </h3>
-        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 23 anys i és de Lleida. Li agrada la Formula 1, els caballs i la platja.</p>
-        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 23 years old and is from Lleida. She likes Formula 1, horses and the beach.</p> -->
       </div>
       <div class="member">
         <img src="inca_ciurana.jpg" alt="Inca Ciurana">
@@ -650,9 +667,15 @@
             <img src="linkedin.png" alt="LinkedIn Inca Ciurana" style="width:25px; height:25px; margin-top:6px; border-radius:4px;">
           </a>
         </h3>
-        <!-- <p style="text-align:justify; margin-top:6px;" class="ca">Estudiant d'enginyeria industrial. Té 22 anys i és de Girona. Li agrada el futbol, la muntanya i el motorsport.</p>
-        <p style="text-align:justify; margin-top:6px;" class="en">Industrial engineer student. She is 22 years old and is from Girona. She likes soccer, hiking and motorsport.</p> -->
       </div>
+    </div>
+    <!-- Card cotxe -->
+    <div class="member full-width">
+      <img src="Lioneta1.jpg" alt="Cotxe" style="width:100%; height:auto; border-radius:15px; margin-bottom:15px;">
+      <h3 class="ca" style="font-family: 'Conthrax', sans-serif; text-align: justify;">La LIONETA</h3>
+      <h3 class="en" style="font-family: 'Conthrax', sans-serif; text-align: justify;">The LIONETA</h3>
+      <p class="ca" style="text-align: justify;">Ford Focus 1998. Motor 1.6 Zetec-SE, 100 CV, 0-100 km/h en 11s. Tracció davantera i transmissió manual de 5 velocitats. Ideal per a la UNIRAID i terrenys exigents.</p>
+      <p class="en" style="text-align: justify;">Ford Focus 1998.1.6 Zetec-SE engine, 100 HP, 0-100 km/h in 11s. Front-wheel drive with 5-speed manual transmission. Perfect for UNIRAID and challenging terrain.</p>
     </div>
   </section>
 
