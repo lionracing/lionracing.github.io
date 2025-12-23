@@ -297,7 +297,7 @@
       position: relative;
       background: #ffffff;
       color: black;
-      border-radius: 20px;
+      border-radius: 0;
       overflow: hidden;
       padding-bottom: 20px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -308,6 +308,75 @@
     }
     .news-card-img-2 {
       width: 100%;
+    }
+    .instagram-section {
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .instagram-section h2 {
+      font-family: 'Conthrax', sans-serif;
+      margin-bottom: 20px;
+    }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .insta-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .insta-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.0);
+      transition: background 0.3s ease;
+      pointer-events: none;
+    }
+    .insta-card:hover::after {
+      background: rgba(255,255,255,0.25);
+    }
+    .insta-card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      transform: translateY(-5px);
+    }
+    .insta-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .insta-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: left;
+      margin-bottom: 25px;
+    }
+    .insta-header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .insta-header-text {
+      text-align: left;
+    }
+    .insta-header-text strong {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: black;
+      font-size:1.6rem;
+    }
+    .insta-header-text p {
+      margin: 4px 0 0;
+      font-size: 0.9rem;
+      color: #555;
     }
     footer {
       background: #052493;
@@ -486,6 +555,9 @@
         width: 100%;
         margin-bottom: 15px; /* espai vertical entre imatges */
       }
+      .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -621,8 +693,47 @@
         </div>
       </div>
     </div>
-    <!-- Instagram feed -->
-    
+    <!-- Instagram Feed -->
+    <div id="instagram-feed" class="instagram-section">
+      <div class="insta-header">
+        <a href="https://www.instagram.com/lionracing.uniraid/" target="_blank">
+          <img src="Logo_FonsBlau.png" alt="Instagram profile">
+        </a>
+        <div class="insta-header-text">
+          <strong>@lionracing.uniraid</strong>
+          <p>Two engineers, one mission - UNIRAID 2026, where solidarity meets adventure.</p>
+        </div>
+      </div>
+      <div class="instagram-grid">
+        <a href="https://www.instagram.com/reel/DSidjCVCHO2/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta1.jpg" alt="Instagram post 1">
+        </a>
+
+        <a href="https://www.instagram.com/reel/DSTGDzuiEB_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta2.jpg" alt="Instagram post 2">
+        </a>
+
+        <a href="https://www.instagram.com/reel/DSQh2adiPw3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta3.jpg" alt="Instagram post 3">
+        </a>
+
+        <a href="https://www.instagram.com/reel/DSDibfcCJrh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta4.jpg" alt="Instagram post 4">
+        </a>
+
+        <a href="https://www.instagram.com/p/DRIUFIziMDW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta5.jpg" alt="Instagram post 5">
+        </a>
+
+        <a href="https://www.instagram.com/p/DPwnSl8CKik/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="insta-card">
+          <img src="insta6.jpg" alt="Instagram post 6">
+        </a>
+      </div>
+
+      <a href="https://www.instagram.com/lionracing.uniraid/" target="_blank" class="btn2" style="margin-top:30px">
+        Instagram
+      </a>
+    </div>
   </section>  
     
   <!-- L'Equip -->
